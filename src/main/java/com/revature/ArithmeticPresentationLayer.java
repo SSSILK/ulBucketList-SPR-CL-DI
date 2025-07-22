@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 /**
- * To show off how dependency injection works, this class
+ *To show off how dependency injection works, this class
  * uses the Adder, Multiplier, and Squarer classes to
  * perform mathematical operations and return the results
  * as strings.
@@ -26,14 +26,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class ArithmeticPresentationLayer {
 
+    @Autowired
     private Adder adder;
-    private Multiplier multiplier;
+    private  Multiplier multiplier;
     private Squarer squarer;
 
+    @Autowired
     public void setMultiplier(Multiplier multiplier) {
         this.multiplier = multiplier;
     }
-
+    @Autowired
     public ArithmeticPresentationLayer(Squarer squarer) {
         this.squarer = squarer;
     }
